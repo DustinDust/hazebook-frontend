@@ -5,6 +5,7 @@ import {
   FormControl,
   FormLabel,
   Input,
+  Link,
   Spinner,
   Stack,
   Text,
@@ -13,6 +14,7 @@ import {
   VisuallyHidden,
   VStack,
 } from '@chakra-ui/react';
+import { Link as ReactRouterLink } from 'react-router-dom';
 import { ErrorMessage, Field, Formik, FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import { ModalWrapper } from '../UI';
@@ -61,7 +63,7 @@ export const LoginForm: React.FC = (props) => {
           <Spinner color='green' size={'xl'} speed='1s' />
         </Center>
       </ModalWrapper>
-      <Stack padding={5} direction={['column', 'row']} spacing='20'>
+      <Stack padding={5} direction='column'>
         <Formik
           initialValues={{
             email: '',
@@ -145,6 +147,12 @@ export const LoginForm: React.FC = (props) => {
             </form>
           )}
         </Formik>
+        <Text fontSize={'sm'}>
+          Forgot your password?{' '}
+          <Link as={ReactRouterLink} to='/forgot-password' color={'green'}>
+            Click here
+          </Link>
+        </Text>
       </Stack>
     </>
   );

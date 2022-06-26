@@ -86,6 +86,33 @@ const SignUpForm: React.FC = (props) => {
                     )}
                   </ErrorMessage>
                 </FormControl>
+
+                <FormControl
+                  isRequired
+                  isInvalid={!!formik.errors.name && formik.touched.name}
+                >
+                  <FormLabel htmlFor='name'>Name</FormLabel>
+                  <Field
+                    as={Input}
+                    name='name'
+                    id='name'
+                    placeholder='Name'
+                    focusBorderColor='#2f855a'
+                  />
+                  <ErrorMessage name='name'>
+                    {(errorMessasge) => (
+                      <Tooltip
+                        label={errorMessasge}
+                        isOpen
+                        placement='right'
+                        hasArrow={true}
+                        backgroundColor='red.300'
+                      >
+                        <VisuallyHidden p={1} />
+                      </Tooltip>
+                    )}
+                  </ErrorMessage>
+                </FormControl>
                 <FormControl
                   isInvalid={
                     !!formik.errors.password && formik.touched.password
@@ -123,7 +150,7 @@ const SignUpForm: React.FC = (props) => {
                   }
                 >
                   <FormLabel htmlFor='confirmPassword'>
-                    Repeat password
+                    Confirm password
                   </FormLabel>
                   <Field
                     as={Input}
@@ -134,32 +161,6 @@ const SignUpForm: React.FC = (props) => {
                     focusBorderColor='#2f855a'
                   />
                   <ErrorMessage name='confirmPassword'>
-                    {(errorMessasge) => (
-                      <Tooltip
-                        label={errorMessasge}
-                        isOpen
-                        placement='right'
-                        hasArrow={true}
-                        backgroundColor='red.300'
-                      >
-                        <VisuallyHidden p={1} />
-                      </Tooltip>
-                    )}
-                  </ErrorMessage>
-                </FormControl>
-                <FormControl
-                  isRequired
-                  isInvalid={!!formik.errors.name && formik.touched.name}
-                >
-                  <FormLabel htmlFor='name'>Name</FormLabel>
-                  <Field
-                    as={Input}
-                    name='name'
-                    id='name'
-                    placeholder='Name'
-                    focusBorderColor='#2f855a'
-                  />
-                  <ErrorMessage name='name'>
                     {(errorMessasge) => (
                       <Tooltip
                         label={errorMessasge}

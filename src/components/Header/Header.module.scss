@@ -1,0 +1,19 @@
+.headerContainer {
+  @media screen and (max-width: 960px) {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+.logoContainer {
+  @media screen and (max-width: 960px) {
+    display: none !important;
+  }
+}
+
+.searchBarContainer {
+  @media screen and (max-width: 1280px) {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
