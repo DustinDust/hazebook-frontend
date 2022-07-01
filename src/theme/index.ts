@@ -5,6 +5,7 @@ const theme = extendTheme({
     heading: `Rubik, ${base.fonts.heading}`,
     body: `Nunito, ${base.fonts.body}`,
   },
+  components: {},
 });
 
 export default theme;
